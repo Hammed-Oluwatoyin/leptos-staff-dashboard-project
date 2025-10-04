@@ -70,3 +70,89 @@ This may be useful for integrating external tools which require a static site, e
 ## Licensing
 
 This template itself is released under the Unlicense. You should replace the LICENSE for your own application with an appropriate license if you plan to release it publicly.
+
+# 🧩 Letpos Staff Dashboard Project
+
+This project demonstrates a complete **CRUD (Create, Read, Update, Delete)** flow for managing team members using the **Leptos** web framework.  
+It highlights and keeps records of **Frontend Engineers**, **Backend Engineers**, and **UI/UX Designers** collaborate effectively working in an organization.
+
+---
+
+### 🧠 Core Data Model
+
+```rust
+Person {
+    uuid: Uuid,
+    name: String,
+    title: String,
+    level: String,
+    compensation: f64,
+    joined_date: NaiveDate,
+}
+ ```
+Each `Person` represents a team member with details such as **name**, **job title**, **level**, **salary**, and **date of joining**.
+
+---
+
+## 🧩 Frontend Engineers
+
+Frontend engineers focus on building the **interactive user interface** using **Leptos’ reactive components**.
+
+They are responsible for implementing:
+
+- 📝 **Data forms** for creating and editing `Person` entries.  
+- 📋 **Dynamic lists** to display team members with real-time updates.  
+- ✅ **Client-side validation** using the `validator` crate and Leptos signals.  
+- 📊 **Integration of charts** using `charts-rs` to visualize compensation or team growth trends.
+
+These features ensure a seamless user experience, where frontend components react instantly to user input and data changes.
+
+---
+
+## 🎨 UI/UX Designers
+
+UI/UX designers ensure that the interface is **intuitive**, **accessible**, and **visually consistent**.  
+They collaborate by:
+
+- 🧱 **Creating design mockups and wireframes** for CRUD interfaces.  
+- 🔤 **Defining the visual hierarchy and component layout** for readability.  
+- 🎨 **Using Tailwind CSS or custom CSS** for clean, responsive styling.  
+- 🚀 **Ensuring a smooth user journey** from adding new team members to editing or removing them.
+
+Their work helps maintain a cohesive design system and improves usability across devices and workflows.
+
+---
+
+## 🚀 Example Use Cases
+
+This project can be adapted for a variety of real-world scenarios, such as:
+
+- 🧾 **HR dashboard** for managing employee data.  
+- 💼 **Startup team overview** displaying compensation and growth analytics.  
+- 🔍 **Real-time team directory** with filtering and sorting capabilities.
+
+These examples illustrate how Leptos can power dynamic, data-driven interfaces with real-time interactivity.
+
+---
+
+## 🧰 Tech Stack
+
+This project leverages a modern Rust-based full-stack architecture, including:
+
+- ⚛️ **Leptos** – Reactive frontend and server-side rendering (SSR) framework  
+- 🚀 **Actix Web** – High-performance backend web server  
+- 🧮 **SurrealDB** – Modern, flexible database for structured and unstructured data  
+- 🎨 **Tailwind CSS** – Utility-first styling framework for rapid UI development  
+- 📊 **Charts-rs** – Data visualization library for analytics and insights  
+- 🧾 **UUID / Chrono** – For unique identifiers and robust date-time handling
+
+---
+
+### 🧩 Supporting Libraries & Utilities
+- 🧾 **UUID / Chrono** – Unique identifiers and robust date-time handling  
+- 🧠 **Validator** – Type-safe validation for user input and form data  
+- ⚙️ **Serde** – Serialization and deserialization framework  
+- 🪶 **Wasm-bindgen** – WebAssembly bindings for Rust-to-JS interop  
+- 🧩 **Leptos Router / Meta / Actix** – For routing, metadata management, and SSR integration  
+- 🔧 **ThisError / OnceCell / Cfg-if** – Utilities for error handling, lazy initialization, and conditional compilation  
+- 🔢 **Num-format** – For locale-aware number formatting 
