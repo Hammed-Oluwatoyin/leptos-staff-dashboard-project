@@ -1,7 +1,8 @@
 pub mod pages;
+pub mod components;
 
 
-use leptos::prelude::*;
+use leptos::{html::Body, prelude::*};
 use leptos_meta::{provide_meta_context, Stylesheet, Title};
 use leptos_router::{
     components::{Route, Router, Routes},
@@ -9,6 +10,7 @@ use leptos_router::{
 };
 
 use pages::{HomePage , TeamPage};
+use crate::app::components::Header;
 
 
 
@@ -26,14 +28,19 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="leptos" href="/pkg/leptos-staff-dashboard-project.css"/>
           <link data-trunk rel="tailwind-css" href="/style/input.css" />
 
+        
+
         // sets the document title
         <Title text="Welcome to Leptos"/>
 
+       
+
         // content for this welcome page
         <Router>
+        <Header/>
             <main>
                 <Routes fallback=move || "Not found.">
-                    <Route path=StaticSegment("") view=HomePage/>
+                    <Route path=StaticSegment("/") view=HomePage/>
                      <Route path=StaticSegment("/team") view=TeamPage/>
                     <Route path=WildcardSegment("any") view=NotFound/>
                 </Routes>
