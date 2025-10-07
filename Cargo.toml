@@ -15,7 +15,17 @@ leptos = { version = "0.8.2", features = ["nightly"] }
 leptos_meta = { version = "0.8.2" }
 leptos_actix = { version = "0.8.2", optional = true }
 leptos_router = { version = "0.8.2", features = ["nightly"] }
-wasm-bindgen = "=0.2.103"
+wasm-bindgen = "0.2.104"
+chrono = "0.4.42"
+num-format = "0.4.4"
+serde = { version = "1.0.228", features = ["derive"] }
+validator = { version = "0.20.0", features = ["derive"] }
+uuid = {version = "1.17.0", features = ["v4", "serde", "js"]}
+getrandom = {version="0.3" , features =["wasm_js"]}
+
+
+charts-rs = "0.3.25"
+
 
 [features]
 csr = ["leptos/csr"]

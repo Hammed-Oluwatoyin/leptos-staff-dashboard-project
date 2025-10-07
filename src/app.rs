@@ -1,5 +1,6 @@
 pub mod pages;
 pub mod components;
+pub mod models;
 
 
 use leptos::{html::Body, prelude::*};
