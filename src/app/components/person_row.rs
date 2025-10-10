@@ -1,4 +1,4 @@
-use crate::app::components::ToastMessage;
+use crate::app::components::{EditPersonModal, ShowPersonModal, ToastMessage};
 use crate::app::models::Person;
 use leptos::prelude::*;
 use std::rc::Rc;
@@ -12,7 +12,7 @@ const SHOW_ICON_STYLE: &str = "bg-transparent border-2 border-white px-2.5 mt-2
 
 #[component]
 pub fn PersonRow(
-    person: Rc<Person>,
+    person: Person,
     person_resource: Vec<Person>,
     set_if_show_toast: WriteSignal<bool>,
     set_toast_message: WriteSignal<ToastMessage>,
@@ -28,7 +28,28 @@ pub fn PersonRow(
         set_if_show_edit_modal(true);
     };
 
+    let stored_person = StoredValue::new(person.clone());
+    let stored_resource = StoredValue::new(person_resource);
+
     view! {
+        <Show when=move || if_show_info_modal()>
+            <ShowPersonModal
+                person=Rc::new(stored_person.get_value())
+                set_if_show_modal=set_if_show_info_modal
+                set_if_show_deleted=set_if_show_toast
+                person_resource=stored_resource.get_value()
+                set_toast_message
+            />
+        </Show>
+        <Show when=move || { if_show_edit_modal() }>
+            <EditPersonModal
+                person=Rc::new(stored_person.get_value())
+                set_if_show_modal=set_if_show_edit_modal
+                set_if_show_toast=set_if_show_toast
+                person_resource=stored_resource.get_value()
+                set_toast_message
+            />
+        </Show>
         <div class=ROW_STYLE>
             <div class="flex flex-col w-full max-w-[45rem]">
                 <p class="font-bold">{person.name.clone()}</p>

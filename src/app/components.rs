@@ -16,6 +16,12 @@ pub use add_person_modal::AddPersonModal;
 pub mod person_row;
 pub use person_row::PersonRow;
 
+pub mod show_person_modal;
+pub use show_person_modal::ShowPersonModal;
+
+pub mod edit_person_modal;
+pub use edit_person_modal::EditPersonModal;
+
 pub mod toast;
 pub use toast::Toast;
 pub use toast::ToastMessage;

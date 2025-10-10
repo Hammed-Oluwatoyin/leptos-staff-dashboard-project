@@ -147,7 +147,7 @@ pub fn TeamPage() -> impl IntoView {
                                                       Ok(persons) => {
                                                            persons.iter().map(|each_person| view! {
                                                                 <PersonRow
-                                                                    person=Rc::new(each_person.clone())
+                                                                    person=each_person.clone()
                                                                     person_resource=persons.clone()
                                                                     set_if_show_toast
                                                                     set_toast_message
