@@ -119,9 +119,11 @@ pub fn HomePage() -> impl IntoView {
                                         <DashboardChart persons_data />
                                     }.into_any()
                                 },
-                                Err(_) => view! {
-                                    <div>"No Data Found"</div>
-                                }.into_any()
+                                Err(_) =>{  
+                                    view! {
+                                       <div></div>
+                                    }.into_any()
+                             }
                             }
                         })
                     }
